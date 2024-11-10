@@ -1,0 +1,12 @@
+nltk
+numpy
+pandas
+tensorflow
+seaborn
+matplotlib
+tensorflow_hub
+afinn 
+transformers
+scikit-learn
+zappa
+-e .
