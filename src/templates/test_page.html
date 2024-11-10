@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TextEmojiFusion Model Deploy Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: url("{{ url_for('static', filename='emoji_background2.jpg') }}") no-repeat center center fixed, #f0f0f0;
+            background-size: cover;
+        }
+        .container {
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+        input[type="text"] {
+            width: 50%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 1em;
+            text-align: right;
+            color: #666;
+        }
+        .loading {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .loading img {
+            width: 50px;
+            height: 50px;
+        }
+        .loading-bar {
+            width: 33%; /* Three times smaller */
+            background-color: #f3f3f3;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 10px auto; /* Center the bar and add margin */
+        }
+        .loading-bar-fill {
+            height: 20px;
+            width: 0;
+            background-color: #4caf50;
+            border-radius: 4px;
+            transition: width 8s; /* Slower transition */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to test TextEmojiFusion Model</h1>
+        <p>This model transforms your text into a fusion of text and emojis, enhancing your communication with expressive and fun elements. Please enter your test text in the space below:</p>
+        <form id="textForm" action="{{ url_for('predict') }}" method="post">
+            <input type="text" name="user_text" placeholder="Enter your text here" required>
+            <button type="submit">Emojify</button>
+        </form>
+        <div class="loading" id="loading">
+            <img src="{{ url_for('static', filename='loading_spinner.gif') }}" alt="Loading...">
+            <div class="loading-bar">
+                <div class="loading-bar-fill" id="loadingBarFill"></div>
+            </div>
+            <p>Please wait while the system processes your request...</p>
+        </div>
+        <div class="footer">
+            <b><i>Model built by Adesegun Oluwademilade Daniel</i></b>
+        </div>
+    </div>
+    <script>
+        document.getElementById('textForm').addEventListener('submit', function() {
+            document.getElementById('loading').style.display = 'block';
+            let loadingBarFill = document.getElementById('loadingBarFill');
+            loadingBarFill.style.width = '0';
+            setTimeout(() => { loadingBarFill.style.width = '100%'; }, 100);
+        });
+    </script>
+</body>
+</html>

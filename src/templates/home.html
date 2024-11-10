@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TextEmojiFusion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background: url("{{ url_for('static', filename='emoji_background.jpg') }}") no-repeat center center fixed, #f0f0f0;
+            background-size: cover;
+        }
+        .container {
+            text-align: center;
+            padding: 50px;
+            background-color: rgba(255, 255, 255, 0.8);
+            margin: 50px auto;
+            max-width: 800px;
+            border-radius: 10px;
+        }
+        h1 {
+            font-size: 3em;
+            color: #333;
+        }
+        p {
+            font-size: 1.2em;
+            color: #666;
+        }
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+        .emoji {
+            position: absolute;
+            animation: float 10s infinite;
+            opacity: 0.8;
+        }
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to TextEmojiFusion</h1>
+        <p>
+            <strong>TextEmojiFusion</strong> is a powerful and intuitive tool 💌 designed to enhance your text with 🧔 the perfect emojis. Whether you're looking 😉 to add a touch of emotion, 💅 humor, or emphasis, TextEmojiFusion is not 🤫 just a tool; it's your creative 🤗 partner in the digital realm, transforming 💭 mundane messages into vibrant conversations. Imagine 🥳 a platform that understands the nuances 🦿 of your emotions and the subtleties 💭 of your humor, then curates a 💟 selection of emojis that perfectly align 💌 with your intent. TextEmojiFusion does just 🖖 that, bridging the gap between plain 💨 text and the rich expressiveness of 🥳 emojis. With its intuitive design, it's 🤞 incredibly user-friendly, inviting you to elevate 🙃 your communication effortlessly. Whether you're conveying 🤗 heartfelt sentiments, injecting a dose of 💟 wit, or emphasizing key🔑 points, TextEmojiFusion 🦿 integrates emojis with such finesse that 💪 your messages will capture hearts and 👐 imaginations alike. It's not merely about ✌ enhancing text; it's about enriching connections 😾 and sharing experiences that words alone 🤑 can't fully express. With TextEmojiFusion, every 🧔 message becomes a canvas, and every 🧔 conversation is an opportunity to create 😗 something memorable. So why settle for 💓 ordinary when you can communicate with 🦾 color, emotion, and life? Embrace the 😉 power of TextEmojiFusion and watch⌚ your 🖖 digital interactions blossom🌼 into engaging, expressive, 😾 and extraordinary exchanges. 💭
+        </p>
+        <a href="{{ url_for('test_page') }}" class="button">Test Now</a>
+    </div>
+    <script>
+        const emojis = ['😀', '😂', '😍', '😎', '🤔', '😜', '🤗', '😇', '🤩', '🥳'];
+        const body = document.body;
+
+        emojis.forEach((emoji, index) => {
+            const span = document.createElement('span');
+            span.textContent = emoji;
+            span.className = 'emoji';
+            span.style.left = `${Math.random() * 100}vw`;
+            span.style.top = `${Math.random() * 100}vh`;
+            span.style.animationDelay = `${Math.random() * 10}s`;
+            body.appendChild(span);
+        });
+    </script>
+    <footer style="text-align: center; padding: 20px; background-color: rgba(255, 255, 255, 0.8); margin-top: 20px;">
+        <p><strong><em>Model built by Adesegun Oluwademilade Daniel</em></strong></p>
+    </footer>
+</body>
+</html>
