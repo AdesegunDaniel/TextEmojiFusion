@@ -29,13 +29,13 @@ Creating a model like this that utilizes 💋 a vast majority of emojis is 🤌 
 
 # Usage
 
-To try out how TextEmojiFusion works [Click here](http://44.207.8.81/)
 
 ```python
 
 print(spiced_text)  # Output: I love coding! 😍💻
 ```
 
+To try out how TextEmojiFusion works [Click here](http://44.207.8.81/)
 ## Contributing
 
 We welcome contributions from the community! Please conact **adesegundaniel11@gmail.com** for any input 
