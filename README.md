@@ -24,24 +24,15 @@ Creating a model like this that utilizes 💋 a vast majority of emojis is 🤌 
 
 # Installation
 
-To install TextEmojiFusion, simply clone the repository and install the required dependencies:
 
-```bash
-git clone https://github.com/AdesegunDaniel/TextEmojiFusion.git
-cd TextEmojiFusion
-pip install -r requirements.txt
 ```
 
 # Usage
 
-Here's a quick example of how to use TextEmojiFusion:
+To try out how TextEmojiFusion works [Click here](http://44.207.8.81/)
 
 ```python
-from textemojifusion import EmojiSpicer
 
-spicer = EmojiSpicer()
-text = "I love coding!"
-spiced_text = spicer.spice(text)
 print(spiced_text)  # Output: I love coding! 😍💻
 ```
 
